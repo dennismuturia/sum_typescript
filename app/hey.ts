@@ -1,9 +1,20 @@
-var findSum = function(first:number, second:number){
-  var summ = first + second;
-  console.log(summ);
+class Greeter {
+  greeting: string;
+
+  constructor(message: string) {
+    this.greeting = message;
+  }
+
+  greet() {
+    return "Hello, " + this.greeting;
+  }
 }
 
-var first = parseInt(prompt("Enter the first number"));
-var second = parseInt(prompt("Enter the second number"));
-
-findSum(first, second);
+var greeters: Greeter[] = [];
+greeters.push(new Greeter("world"));
+greeters.push(new Greeter("how are you?"));
+greeters.push(new Greeter("my baby, hello my honey, hello my ragtime gal!"));
+console.log(greeters);
+for (var greeter of greeters) {
+  alert(greeter.greet());
+}
